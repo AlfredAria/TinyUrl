@@ -28,6 +28,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Maintaining post data while redirecting to the slash url.
+APPEND_SLASH=False
 
 # Application definition
 
@@ -57,7 +59,9 @@ ROOT_URLCONF = 'tinyurl.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates').replace("\\", "/")
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

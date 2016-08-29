@@ -1,4 +1,3 @@
-# codec.py
 from url.models import LongUrl
 import socket
 
@@ -20,7 +19,7 @@ class Codec:
             longUrlObj.save()
             index = longUrlObj.id
         print(index)
-        return "http://" + HOSTNAME + ":8000/" + Codec.encode(index)
+        return "http://" + HOSTNAME + ":8000/url/" + Codec.encode(index)
 
     @staticmethod
     def short_to_long(short):

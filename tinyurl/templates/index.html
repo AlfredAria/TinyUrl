@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Tiny Url</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    </head>
+    <body>
+        <div class="page-header">
+
+        </div>
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                    <form action="/url/" method="post">
+                        {% csrf_token %}
+                        {{ form }}
+                        <input type="submit" value="Submit" />
+                    </form>
+                    Your short url:
+                    <input type="text" value="{{ shortUrl }}" style="width: 800px"/>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
